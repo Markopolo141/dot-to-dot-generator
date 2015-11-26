@@ -1,0 +1,192 @@
+{
+    "PointLoader": {
+        "name": "RandomPointLoader",
+        "config": {
+            "length": 300
+        }
+    },
+    "globals": {
+        "border": 7,
+        "factor": 0.3,
+        "step": 3
+    },
+    "cycles": 128,
+    "Stages": [
+        {
+            "name": "_initial",
+            "cycles": 0,
+            "actions": [],
+            "filters": [],
+            "metrics": [],
+            "outputters": [
+                {"name":"ImageOutputter", "config": {"filename": "sample_output/img{}.png"}},
+                {"name":"PostScriptOutputter", "config": {"filename": "sample_output/pimg{}.ps"}}
+            ]
+        },
+        {
+            "name": "Big-Blur",
+            "cycles": 20,
+            "actions": [
+                {"name":"Left", "config": {}},
+                {"name":"Right", "config": {}},
+                {"name":"Up", "config": {}},
+                {"name":"Down", "config": {}},
+                {"name":"Forward", "config": {}},
+                {"name":"Backward", "config": {}},
+                {"name":"Supress", "config": {}},
+                {"name":"Extremize", "config": {}}
+            ],
+            "filters": [
+                {"name":"DescretiseFilter","config": {}},
+                {"name":"RepeatFilter","config": {}},
+                {"name":"BoundaryFilter","config": {}}
+            ],
+            "metrics": [
+                {
+                    "name":"RMSBlurCompare",
+                    "weight":1.0,
+                    "config": {
+                        "kernel_name": "GaussianKernel",
+                        "k_width": 55,
+                        "k_height": 55,
+                        "r": 18
+                    }
+                }
+            ],
+            "outputters": [
+                {"name":"ImageOutputter", "config": {"filename": "sample_output/img{}.png"}},
+                {"name":"PostScriptOutputter", "config": {"filename": "sample_output/pimg{}.ps"}},
+                {"name":"BlurredImageOutputter", "config": {"filename": "sample_output/bimg{}.png",
+                "kernel_name": "GaussianKernel",
+                        "k_width": 55,
+                        "k_height": 55,
+                        "r": 23}}
+            ]
+        },
+        {
+            "name": "Mid-Blur",
+            "cycles": 30,
+            "actions": [
+                {"name":"Left", "config": {}},
+                {"name":"Right", "config": {}},
+                {"name":"Up", "config": {}},
+                {"name":"Down", "config": {}},
+                {"name":"Forward", "config": {}},
+                {"name":"Backward", "config": {}},
+                {"name":"Supress", "config": {}},
+                {"name":"Extremize", "config": {}}
+            ],
+            "filters": [
+                {"name":"DescretiseFilter","config": {}},
+                {"name":"RepeatFilter","config": {}},
+                {"name":"BoundaryFilter","config": {}}
+            ],
+            "metrics": [
+                {
+                    "name":"RMSBlurCompare",
+                    "weight":1.0,
+                    "config": {
+                        "kernel_name": "LorentzianKernel",
+                        "k_width": 40,
+                        "k_height": 40,
+                        "r": 9
+                    }
+                }
+            ],
+            "outputters": [
+                {"name":"ImageOutputter", "config": {"filename": "sample_output/img{}.png"}},
+                {"name":"PostScriptOutputter", "config": {"filename": "sample_output/pimg{}.ps"}},
+                {"name":"BlurredImageOutputter", "config": {"filename": "sample_output/bimg{}.png",
+                "kernel_name": "LorentzianKernel",
+                        "k_width": 40,
+                        "k_height": 40,
+                        "r": 9}}
+            ]
+        },
+        {
+            "name": "Sml-Blur",
+            "cycles": 40,
+            "actions": [
+                {"name":"Left", "config": {}},
+                {"name":"Right", "config": {}},
+                {"name":"Up", "config": {}},
+                {"name":"Down", "config": {}},
+                {"name":"Forward", "config": {}},
+                {"name":"Backward", "config": {}},
+                {"name":"Supress", "config": {}},
+                {"name":"Extremize", "config": {}}
+            ],
+            "filters": [
+                {"name":"DescretiseFilter","config": {}},
+                {"name":"RepeatFilter","config": {}},
+                {"name":"BoundaryFilter","config": {}}
+            ],
+            "metrics": [
+                {
+                    "name":"RMSBlurCompare",
+                    "weight":1.0,
+                    "config": {
+                        "kernel_name": "LorentzianKernel",
+                        "k_width": 20,
+                        "k_height": 20,
+                        "r": 4
+                    }
+                }
+            ],
+            "outputters": [
+                {"name":"ImageOutputter", "config": {"filename": "sample_output/img{}.png"}},
+                {"name":"PostScriptOutputter", "config": {"filename": "sample_output/pimg{}.ps"}},
+                {"name":"BlurredImageOutputter", "config": {"filename": "sample_output/bimg{}.png",
+                "kernel_name": "LorentzianKernel",
+                        "k_width": 20,
+                        "k_height": 20,
+                        "r": 4}}
+            ]
+        },
+        {
+            "name": "SSl-Blur",
+            "cycles": 40,
+            "actions": [
+                {"name":"Left", "config": {}},
+                {"name":"Right", "config": {}},
+                {"name":"Up", "config": {}},
+                {"name":"Down", "config": {}},
+                {"name":"Forward", "config": {}},
+                {"name":"Backward", "config": {}},
+                {"name":"Supress", "config": {}},
+                {"name":"Extremize", "config": {}}
+            ],
+            "filters": [
+                {"name":"DescretiseFilter","config": {}},
+                {"name":"RepeatFilter","config": {}},
+                {"name":"BoundaryFilter","config": {}}
+            ],
+            "metrics": [
+                {
+                    "name":"RMSBlurCompare",
+                    "weight":1.0,
+                    "config": {
+                        "kernel_name": "LorentzianKernel",
+                        "k_width": 7,
+                        "k_height": 7,
+                        "r": 1.6
+                    }
+                }
+            ],
+            "outputters": [
+                {"name":"ImageOutputter", "config": {"filename": "sample_output/img{}.png"}},
+                {"name":"PostScriptOutputter", "config": {"filename": "sample_output/pimg{}.ps"}},
+                {"name":"BlurredImageOutputter", "config": {"filename": "sample_output/bimg{}.png",
+                "kernel_name": "LorentzianKernel",
+                        "k_width": 7,
+                        "k_height": 7,
+                        "r": 1.6}}
+            ]
+        }
+    ],
+    "outputters": [
+        {"name":"ImageOutputter", "config": {"filename": "sample_output/final-img{}.png"}},
+        {"name":"PostScriptOutputter", "config": {"filename": "sample_output/final-pimg{}.ps"}},
+        {"name":"JSONOutputter", "config": {"filename": "sample_output/final-img{}.json"}}
+    ]
+}
