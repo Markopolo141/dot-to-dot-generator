@@ -5,7 +5,7 @@ controlled evolution of a dot-to-dot from an image file
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/Markopolo141/dot-to-dot-generator/master/sample_input/sample_img.png" width="230">
-    <img src="https://raw.githubusercontent.com/Markopolo141/dot-to-dot-generator/master/sample_output/1000ptblurred.png" width="230">
+    <img src="https://raw.githubusercontent.com/Markopolo141/dot-to-dot-generator/master/sample_output/1000ptunblurred.png" width="230">
 </p>
 
 ### How-To
