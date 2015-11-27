@@ -15,6 +15,6 @@ Needs a working install of Python 2.X.X with installed NumPy, OpenCV & python-pr
 ### How To Use
 
 ```
-python dot-to-dot-generator.py <config_file> <image_file>
+python dot_to_dot_generator.py <config_file> <image_file>
 ```
 and wait a while. use --help if you need it.

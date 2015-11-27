@@ -5,11 +5,9 @@ import math
 
 import mock
 import unittest
-import pdb
 
-from d import draw_line, CoreMetaGen, Left, Right, Up, Down, Forward, Backward, Supress, Extremize, IgnorableException, BoundaryFilter, RepeatFilter, DescretiseFilter, GaussianKernel, LorentzianKernel, RandomPointLoader, TotalRandomPointLoader, JSONPointLoader, LinearBlurCompare, RMSBlurCompare, AvgLengthCompare, ImageOutputter, BlurredImageOutputter
+from dot_to_dot_generator import *
 
-#pdb.set_trace()
 
 class TestProgram(unittest.TestCase):
     def test_drawline(self):
@@ -67,7 +65,7 @@ class TestProgram(unittest.TestCase):
         ll = l.gen() * 100
         ll = ll.astype(np.int8, copy=False)
         self.assertEqual(str(ll.tolist()), str([[ 4, 6, 4],[ 9,16, 9],[ 9,16, 9],[ 4, 6, 4]]))
-    @mock.patch('d.loadJSON')
+    @mock.patch('dot_to_dot_generator.loadJSON')
     def test_point_loaders(self, m):
         m.return_value = [[4,4],[4,4],[4,4],[4,4],[4,4]]
         loaders = [RandomPointLoader, TotalRandomPointLoader, JSONPointLoader]
